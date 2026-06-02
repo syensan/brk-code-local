@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRK-Code Report</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --green: #3fb950;
+  --yellow: #d29922;
+  --red: #f85149;
+  --code-bg: #1c2128;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; max-width:1100px; margin:0 auto; }
+h1 { font-size:2rem; margin-bottom:0.5rem; }
+h2 { font-size:1.4rem; margin:2rem 0 0.75rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border); color:var(--accent); }
+h3 { font-size:1.1rem; margin:1.5rem 0 0.5rem; color:var(--green); }
+p { margin:0.5rem 0; }
+code { font-family: 'SFMono-Regular',Consolas,monospace; background:var(--code-bg); padding:0.15rem 0.4rem; border-radius:4px; font-size:0.88em; }
+pre { background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:1rem; overflow-x:auto; margin:1rem 0; }
+table { width:100%; border-collapse:collapse; margin:1rem 0; }
+th,td { padding:0.5rem 0.75rem; text-align:left; border-bottom:1px solid var(--border); }
+th { color:var(--accent); font-weight:600; }
+td { color:var(--muted); }
+.badge { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.8rem; font-weight:600; }
+.badge-red { background:#da363333; color:var(--red); border:1px solid #da363355; }
+.badge-yellow { background:#9e6a0333; color:var(--yellow); border:1px solid #9e6a0355; }
+.badge-green { background:#23863633; color:var(--green); border:1px solid #23863655; }
+.badge-blue { background:#1f6feb33; color:var(--accent); border:1px solid #1f6feb55; }
+.warning { background:#9e6a0322; border:1px solid #9e6a0355; border-radius:8px; padding:1rem; margin:1rem 0; }
+.warning strong { color:var(--yellow); }
+.severity-high { color:var(--red); font-weight:bold; }
+.severity-medium { color:var(--yellow); font-weight:bold; }
+.severity-low { color:var(--green); }
+.search-box { margin:1rem 0; }
+.search-box input { background:var(--code-bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.5rem 1rem; width:100%; max-width:400px; font-size:0.95rem; }
+.stats { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0; }
+.stat { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:1rem 1.5rem; text-align:center; min-width:120px; }
+.stat .num { font-size:1.8rem; font-weight:bold; color:var(--accent); }
+.stat .label { font-size:0.8rem; color:var(--muted); margin-top:0.25rem; }
+footer { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.85rem; text-align:center; }
+</style>
+</head>
+<body>
+
+<h1>BRK-Code Report: sample_project</h1>
+<p><span class="badge badge-blue">BRK-Code-Python v0.1</span>
+<span class="badge badge-red">Lossless: False</span>
+<span class="badge badge-green">Semantic equivalent: True</span>
+<span class="badge badge-yellow">AI learning optimized: True</span></p>
+
+<div class="warning">
+<strong>⚠ Important</strong><br>
+This BRK-Code file is not a lossless source archive.<br>
+It is an AI-learning-optimized semantic code container.<br>
+このBRK-Codeはソースコードの完全可逆アーカイブではありません。<br>
+AI学習・解析向けの意味構造コンテナです。
+</div>
+<div class="stats">
+<div class="stat"><div class="num">3</div><div class="label">Files</div></div>
+<div class="stat"><div class="num">3</div><div class="label">Python Files</div></div>
+<div class="stat"><div class="num">4</div><div class="label">Functions</div></div>
+<div class="stat"><div class="num">1</div><div class="label">Classes</div></div>
+<div class="stat"><div class="num">3</div><div class="label">Imports</div></div>
+<div class="stat"><div class="num">2</div><div class="label">Security Findings</div></div>
+<div class="stat"><div class="num">15</div><div class="label">Learning Tasks</div></div>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search functions, classes, files..." oninput="filterTables()">
+</div>
+<script>
+function filterTables() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('table[data-filterable] tbody tr').forEach(row => {
+    const text = row.textContent.toLowerCase();
+    row.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+</script>
+<h2>Files</h2>
+<table data-filterable>
+<thead><tr><th>Path</th><th>Lines</th><th>Size</th><th>Test</th></tr></thead>
+<tbody>
+<tr><td><code>app.py</code></td><td>17</td><td>403 bytes</td><td><span class="badge badge-yellow">No</span></td></tr>
+<tr><td><code>test_app.py</code></td><td>7</td><td>152 bytes</td><td><span class="badge badge-green">Yes</span></td></tr>
+<tr><td><code>utils.py</code></td><td>3</td><td>101 bytes</td><td><span class="badge badge-yellow">No</span></td></tr>
+</tbody></table>
+<h2>Functions</h2>
+<table data-filterable>
+<thead><tr><th>Name</th><th>File</th><th>Line</th><th>Args</th><th>Async</th><th>Complexity</th></tr></thead>
+<tbody>
+<tr><td><code>app.py.UserService.login</code></td><td>app.py</td><td>8</td><td>self, username, password</td><td></td><td>2</td></tr>
+<tr><td><code>app.py.unsafe_eval</code></td><td>app.py</td><td>16</td><td>expr</td><td></td><td>1</td></tr>
+<tr><td><code>test_app.py.test_login</code></td><td>test_app.py</td><td>4</td><td></td><td></td><td>1</td></tr>
+<tr><td><code>utils.py.normalize_name</code></td><td>utils.py</td><td>1</td><td>name</td><td></td><td>1</td></tr>
+</tbody></table>
+<h2>Classes</h2>
+<table data-filterable>
+<thead><tr><th>Name</th><th>File</th><th>Line</th><th>Methods</th><th>Bases</th></tr></thead>
+<tbody>
+<tr><td><code>UserService</code></td><td>app.py</td><td>7</td><td>login</td><td></td></tr>
+</tbody></table>
+<h2>Dependencies</h2>
+<table data-filterable>
+<thead><tr><th>From</th><th>Module</th><th>Kind</th></tr></thead>
+<tbody>
+<tr><td>app.py</td><td><code>json</code></td><td><span class="badge badge-blue">ext</span></td></tr>
+<tr><td>app.py</td><td><code>utils</code></td><td><span class="badge badge-green">local</span></td></tr>
+<tr><td>test_app.py</td><td><code>app</code></td><td><span class="badge badge-green">local</span></td></tr>
+</tbody></table>
+<h2>Security Findings (2)</h2>
+<p>Secrets redacted: <strong>1</strong></p>
+<table data-filterable>
+<thead><tr><th>File</th><th>Line</th><th>Severity</th><th>Type</th><th>Message</th></tr></thead>
+<tbody>
+<tr><td>app.py</td><td>17</td><td class="severity-high">high</td><td>eval_usage</td><td>Use of eval() is dangerous and should be avoided.</td></tr>
+<tr><td>app.py</td><td>4</td><td class="severity-high">high</td><td>possible_secret</td><td>Possible hardcoded secret redacted.</td></tr>
+</tbody></table>
+<h2>Learning Tasks (15)</h2>
+<table data-filterable>
+<thead><tr><th>Type</th><th>Prompt</th></tr></thead>
+<tbody>
+<tr><td><span class="badge badge-blue">explain_function</span></td><td>Explain what the function app.py.UserService.login does based on its signature, docstring, and calls....</td></tr>
+<tr><td><span class="badge badge-blue">explain_function</span></td><td>Explain what the function app.py.unsafe_eval does based on its signature, docstring, and calls....</td></tr>
+<tr><td><span class="badge badge-blue">explain_function</span></td><td>Explain what the function test_app.py.test_login does based on its signature, docstring, and calls....</td></tr>
+<tr><td><span class="badge badge-blue">explain_function</span></td><td>Explain what the function utils.py.normalize_name does based on its signature, docstring, and calls....</td></tr>
+<tr><td><span class="badge badge-blue">summarize_module</span></td><td>Summarize the Python module app.py, including its purpose, main classes, and key functions....</td></tr>
+<tr><td><span class="badge badge-blue">summarize_module</span></td><td>Summarize the Python module utils.py, including its purpose, main classes, and key functions....</td></tr>
+<tr><td><span class="badge badge-blue">find_security_risk</span></td><td>Analyze the security finding in app.py at line 17: eval_usage - Use of eval() is dangerous and should be avoided....</td></tr>
+<tr><td><span class="badge badge-blue">find_security_risk</span></td><td>Analyze the security finding in app.py at line 4: possible_secret - Possible hardcoded secret redacted....</td></tr>
+<tr><td><span class="badge badge-blue">write_test</span></td><td>Write a unit test for the function app.py.UserService.login....</td></tr>
+<tr><td><span class="badge badge-blue">write_test</span></td><td>Write a unit test for the function app.py.unsafe_eval....</td></tr>
+<tr><td><span class="badge badge-blue">write_test</span></td><td>Write a unit test for the function utils.py.normalize_name....</td></tr>
+<tr><td><span class="badge badge-blue">infer_dependencies</span></td><td>Infer the dependency structure of app.py from its import statements....</td></tr>
+<tr><td><span class="badge badge-blue">infer_dependencies</span></td><td>Infer the dependency structure of test_app.py from its import statements....</td></tr>
+<tr><td><span class="badge badge-blue">bug_fix_from_static_finding</span></td><td>Fix the security issue in app.py at line 17: eval_usage - Use of eval() is dangerous and should be avoided....</td></tr>
+<tr><td><span class="badge badge-blue">bug_fix_from_static_finding</span></td><td>Fix the security issue in app.py at line 4: possible_secret - Possible hardcoded secret redacted....</td></tr>
+</tbody></table>
+<footer>
+<p>BRK-Code Report | lossless=false | bit_exact_reconstruction=false | semantic_equivalent=true | ai_learning_optimized=true</p>
+<p>BRK-Code does not break Shannon's theorem. BRK-Code is not a universal lossless source-code compressor.</p>
+</footer>
+</body>
+</html>
