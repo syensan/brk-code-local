@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brk-code-local"
+version = "0.1.0"
+description = "BRK-Code - AI-learning-optimized semantic code container for Python repositories"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "BRK-Code Contributors"},
+]
+keywords = ["brk", "brk-code", "code-analysis", "ast", "semantic", "ai-learning", "python", "code-understanding"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+brk-code = "brk_code.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["brk_code*"]
+
+[project.urls]
+Homepage = "https://github.com/syensan/brk-code-local"
+Repository = "https://github.com/syensan/brk-code-local"
+Bug-Tracker = "https://github.com/syensan/brk-code-local/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
